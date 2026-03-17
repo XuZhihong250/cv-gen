@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>在线简历模板编辑器</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>在线简历模板编辑器</h1>
+    <div class="actions">
+      <select id="templateSelect"></select>
+      <select id="draftSelect"></select>
+      <button id="loadDraftBtn" type="button">加载</button>
+      <button id="saveDraftBtn" type="button">保存</button>
+      <button id="saveAsDraftBtn" type="button">另存为</button>
+      <button id="printBtn" class="primary" type="button">打印 / 保存 PDF</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <h2>编辑信息</h2>
+
+      <label>姓名</label>
+      <input id="name" type="text" placeholder="张三" />
+
+      <label>求职意向</label>
+      <input id="title" type="text" placeholder="产品经理 / 前端工程师" />
+
+      <label>手机号</label>
+      <input id="phone" type="text" placeholder="138-0000-0000" />
+
+      <label>邮箱</label>
+      <input id="email" type="email" placeholder="name@example.com" />
+
+      <label>城市</label>
+      <input id="location" type="text" placeholder="上海" />
+
+      <label>个人网站 / GitHub</label>
+      <input id="website" type="text" placeholder="github.com/username" />
+
+      <label>字体家族</label>
+      <select id="fontFamily">
+        <option value="Inter, 'Segoe UI', sans-serif">Inter（现代）</option>
+        <option value="'Microsoft YaHei', 'PingFang SC', sans-serif">微软雅黑（中文清晰）</option>
+        <option value="'Noto Serif SC', 'Songti SC', serif">思源宋体（书卷）</option>
+        <option value="'Times New Roman', serif">Times New Roman（经典）</option>
+      </select>
+
+      <label>正文粗细</label>
+      <select id="fontWeight">
+        <option value="400">常规 400</option>
+        <option value="500">中等 500</option>
+        <option value="600">偏粗 600</option>
+      </select>
+
+      <label>标题粗细</label>
+      <select id="headingWeight">
+        <option value="600">中粗 600</option>
+        <option value="700">加粗 700</option>
+        <option value="800">特粗 800</option>
+      </select>
+
+      <label>个人简介（回车直接换行）</label>
+      <textarea id="summary" rows="4" placeholder="支持 Markdown：**加粗**、*斜体*、`代码`"></textarea>
+
+      <label>头像上传</label>
+      <input id="avatarUpload" type="file" accept="image/*" />
+
+      <label>教育经历（每行：学校｜学历｜时间，字段内用 \\n 换行）</label>
+      <textarea id="education" rows="4" placeholder="同济大学｜本科｜2018-2022"></textarea>
+
+      <label>工作经历（每行：公司｜职位｜时间｜亮点，支持 Markdown，字段内用 \\n 换行）</label>
+      <textarea id="experience" rows="6" placeholder="某科技公司｜前端工程师｜2022-至今｜负责**官网改版**\\n推动跨部门协作"></textarea>
+
+      <label>项目经历（每行：项目｜角色｜时间｜成果，支持 Markdown，字段内用 \\n 换行）</label>
+      <textarea id="projects" rows="6" placeholder="简历系统｜负责人｜2024｜核心流程耗时下降 *30%*\\n用户满意度提升"></textarea>
+
+      <label>技能标签（每行一个）</label>
+      <textarea id="skills" rows="4" placeholder="Figma&#10;React&#10;沟通协作"></textarea>
+    </section>
+    <div class="resizer" id="panelResizer"></div>
+
+    <section class="panel preview-panel">
+      <div class="preview-head">
+        <h2>实时预览</h2>
+        <span id="templateBadge"></span>
+      </div>
+      <div id="paper">
+        <article id="resumePreview"></article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.DEFAULT_TEMPLATE = "__DEFAULT_TEMPLATE__";
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

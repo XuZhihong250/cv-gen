@@ -1,0 +1,23 @@
+# Dependencies
+cv-gen-server/node_modules/
+
+# Runtime data (keep the default template only)
+cv-gen-server/data/*.json
+!cv-gen-server/data/default.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn-error.log*
+
+# Env files
+.env
+.env.*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
