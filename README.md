@@ -5,7 +5,6 @@
 ## 目录结构
 
 - `cv-gen-server/`：主项目（静态前端 + Node HTTP Server）
-- `old-past/`：历史实验内容（当前主流程不依赖）
 
 ## 功能
 
@@ -14,6 +13,7 @@
 - 导出 PDF（与预览保持一致的分页效果）
 - 图片上传（头像）
 - 轻量 Markdown：`**加粗**`、`*斜体*`、`` `代码` ``、字段内 `\n` 换行
+- 特殊 Markdown: `==标题变细==`
 - 草稿文件管理（服务端持久化）
   - 默认文件：`cv-gen-server/data/default.json`
   - 另存为：保存为 `cv-gen-server/data/<文件名>.json`
