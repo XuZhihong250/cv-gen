@@ -59,3 +59,7 @@ node server.js --template=minimal --port=3000
 ## GitHub 提交建议
 
 - `cv-gen-server/data/` 下会产生你的个人草稿文件；仓库默认只保留 `default.json`，其余草稿已被 `.gitignore` 忽略。
+
+## 浏览器端展示
+
+<img width="930" height="429" alt="企业微信截图_17737327762454" src="https://github.com/user-attachments/assets/0635ee53-c4ca-498a-a707-741ffaad02d4" />
